@@ -5,7 +5,7 @@ import Pattren from 'src/assets/pattren.jpg';
 function App() {
 	return (
 		<div className="w-screen max-h-max min-h-screen flex justify-center bg-main pt-20">
-			<div className="w-[75%] min-h-screen max-h-max gap-10 grid justify-between grid-cols-3">
+			<div className="w-[75%] min-h-screen max-h-max gap-10 grid justify-between grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
 				<Card />
 				<Card />
 				<Card />

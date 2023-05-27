@@ -10,17 +10,17 @@ export default function Button({ size, text, variant = 'primary', onClick }: IBu
 		size === 'sm'
 			? 'px-5 py-1 text-[12px]'
 			: size === 'md'
-			? 'px-5 py-2 text-[14px] rounded-md text-[#F15A29] font-bold uppercase'
+			? 'px-5 py-2 text-[14px] rounded-md font-bold uppercase'
 			: 'px-5 py-1 text-[12px]';
 	const variantStyle =
 		variant === 'primary'
-			? 'bg-[#F15A29] shadow-lg'
+			? 'bg-[#F15A29] shadow-lg text-white'
 			: variant === 'secondary'
-			? 'border border-[#F15A29] shadow-lg'
-			: 'bg-transparent';
+			? 'border border-[#F15A29] shadow-lg text-[#F15A29]'
+			: 'bg-transparent text-[#F15A29]';
 
 	return (
-		<button onClick={onClick} className={`text-white ${style} ${variantStyle} rounded-full`}>
+		<button onClick={onClick} className={`${style} ${variantStyle} rounded-full`}>
 			{text}
 		</button>
 	);

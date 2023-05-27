@@ -1,13 +1,13 @@
 import './App.css';
-import { Landing } from './pages';
+import { ErrorPage, Landing } from './pages';
 import { Navbar } from './components';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 const router = createBrowserRouter([
 	{
 		path: '/',
-		element: <Landing />
-		// errorElement: <ErrorPage />,
+		element: <Landing />,
+		errorElement: <ErrorPage />
 	}
 ]);
 

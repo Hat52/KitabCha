@@ -3,7 +3,7 @@ import Pattren from 'src/assets/pattren.jpg';
 
 const Card = () => {
 	return (
-		<div className="card relative flex flex-col justify-between bg-[#DEE7F750] h-[500px] w-[350px] shadow-lg">
+		<div className="card relative flex flex-col justify-between bg-[#DEE7F750] h-[500px] w-[350px] drop-shadow-sm">
 			<div className="w-full h-[40%]">
 				<img src={Pattren} className="w-full h-full object-cover opacity-80" />
 			</div>
@@ -59,7 +59,7 @@ const Item = ({ count, title }: IItem) => {
 	return (
 		<div className="flex flex-col items-center justify-center">
 			<h6 className="font-bold text-[12px]">{count}</h6>
-			<p className="-mt-1 text-[12px] text-main text-[#231F2080]">{title}</p>
+			<p className="text-[10px] text-[#F15A29]">{title}</p>
 		</div>
 	);
 };

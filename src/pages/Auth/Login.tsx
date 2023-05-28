@@ -1,13 +1,43 @@
-import LoginImage from 'src/assets/login.jpg';
-import Logo from 'src/assets/logo.png';
+import AuthContainer from '../../containers/AuthContainer';
+import { Button, TextField } from '../../components';
 
 export default function Login() {
 	return (
-		<div className="flex w-screen h-screen">
-			<div className="w-[30%] flex flex-col pt-5 items-center h-full bg-white shadow-lg">
-				<img src={Logo} className="w-[150px] h-[150px]" />
+		<AuthContainer>
+			<div className="flex flex-col gap-5 px-10 w-full">
+				<TextField
+					id="email"
+					placeholder="Email"
+					label="Email"
+					onChange={(e: any) => console.log(e)}
+					type="email"
+				/>
+				<TextField
+					id="password"
+					placeholder="Password"
+					label="Password"
+					onChange={(e: any) => console.log(e)}
+					type="password"
+				/>
+				<Button
+					size="md"
+					text="Login"
+					variant="primary"
+					className="h-[48px] mt-5"
+					onClick={() => {}}
+				/>
+				<p className="">
+					Don’t have an account?
+					<Button
+						size="md"
+						text="SIGN UP"
+						variant="text"
+						to="/signup"
+						className="h-[48px] px-1"
+						onClick={() => {}}
+					/>
+				</p>
 			</div>
-			<img src={LoginImage} className="w-[70%] object-cover h-full" />
-		</div>
+		</AuthContainer>
 	);
 }

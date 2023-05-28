@@ -16,7 +16,7 @@ export default function TextField({ placeholder, label, type, onChange, id }: IT
 				onChange={onChange}
 				id={id}
 				type={type}
-				className="w-[405px] h-[48px] px-2 bg-[#231F200D] outline-none rounded-sm"
+				className="w-full h-[48px] px-2 bg-[#231F200D] outline-none rounded-sm"
 				placeholder={placeholder}
 			/>
 		</div>

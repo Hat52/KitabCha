@@ -3,6 +3,7 @@ import { ErrorPage, Landing } from './pages';
 import { Navbar } from './components';
 import Login from './pages/Auth/Login';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Signup from './pages/Auth/Signup';
 
 const router = createBrowserRouter([
 	{
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
 	{
 		path: '/login',
 		element: <Login />
+	},
+	{
+		path: '/signup',
+		element: <Signup />
 	}
 ]);
 

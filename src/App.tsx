@@ -1,6 +1,5 @@
 import './App.css';
-import { ErrorPage, Landing } from './pages';
-import { Navbar } from './components';
+import { ErrorPage, Landing, WriteNewSummary } from './pages';
 import Login from './pages/Auth/Login';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Signup from './pages/Auth/Signup';
@@ -18,6 +17,10 @@ const router = createBrowserRouter([
 	{
 		path: '/signup',
 		element: <Signup />
+	},
+	{
+		path: '/write',
+		element: <WriteNewSummary />
 	}
 ]);
 

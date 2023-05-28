@@ -1,11 +1,22 @@
+import { Link } from 'react-router-dom';
+
 interface IButton {
 	variant?: 'primary' | 'secondary' | 'text';
 	size: 'sm' | 'md' | 'lg';
 	text: string;
 	onClick: () => void;
+	className?: string;
+	to?: string;
 }
 
-export default function Button({ size, text, variant = 'primary', onClick }: IButton) {
+export default function Button({
+	size,
+	text,
+	variant = 'primary',
+	onClick,
+	className,
+	to
+}: IButton) {
 	const style =
 		size === 'sm'
 			? 'px-5 py-1 text-[12px]'
@@ -19,9 +30,27 @@ export default function Button({ size, text, variant = 'primary', onClick }: IBu
 			? 'border border-[#F15A29] shadow-lg text-[#F15A29]'
 			: 'bg-transparent text-[#F15A29]';
 
-	return (
-		<button onClick={onClick} className={`${style} ${variantStyle} rounded-full`}>
-			{text}
-		</button>
-	);
+	switch (variant) {
+		case 'text':
+			if (to) {
+				return (
+					<Link
+						className={`text-[14px] font-bold text-[#F15A29] uppercase ${className}`}
+						to={to}>
+						{text}
+					</Link>
+				);
+			}
+			return <></>;
+		case 'primary':
+		case 'secondary':
+		default:
+			return (
+				<button
+					onClick={onClick}
+					className={`${style} ${variantStyle} ${className} rounded-full`}>
+					{text}
+				</button>
+			);
+	}
 }

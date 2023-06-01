@@ -4,11 +4,22 @@ import * as styles from './index.css';
 
 type WindowWithProseMirror = Window & typeof globalThis & { ProseMirror: any };
 
-function WriteNewSummary() {
+interface IWriteNewSummary {
+	isEditable?: boolean;
+	onChange?: (value: any) => void;
+	initialContent?: any;
+}
+
+function WriteNewSummary({ initialContent, isEditable, onChange }: IWriteNewSummary) {
+	// const initialContent: string | null = localStorage.getItem('editorContent');
 	const editor = useBlockNote({
 		onEditorContentChange: (editor) => {
-			console.log(editor.topLevelBlocks);
+			// console.log(editor.topLevelBlocks);
+
+			localStorage.setItem('editorContent', JSON.stringify(editor.topLevelBlocks));
 		},
+		editable: isEditable,
+		initialContent: initialContent ?? undefined,
 		editorDOMAttributes: {
 			className: styles.editor,
 			'data-test': 'editor'

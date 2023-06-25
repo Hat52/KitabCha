@@ -26,17 +26,29 @@ export default function Login() {
 					className="h-[48px] mt-5"
 					onClick={() => {}}
 				/>
-				<p className="">
-					Don’t have an account?
-					<Button
-						size="md"
-						text="SIGN UP"
-						variant="text"
-						to="/signup"
-						className="h-[48px] px-1"
-						onClick={() => {}}
-					/>
-				</p>
+				<div className="flex justify-between items-center">
+					<p className="">
+						Don’t have an account?
+						<Button
+							size="md"
+							text="Sign Up"
+							variant="text"
+							to="/signup"
+							className="px-1 capitalize"
+							onClick={() => {}}
+						/>
+					</p>
+					<p>
+						<Button
+							size="md"
+							text="Forgot Password?"
+							variant="text"
+							to="/forgot-password"
+							className="py-0 capitalize"
+							onClick={() => {}}
+						/>
+					</p>
+				</div>
 			</div>
 		</AuthContainer>
 	);

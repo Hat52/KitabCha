@@ -3,6 +3,7 @@ import { ErrorPage, Landing, WriteNewSummary } from './pages';
 import Login from './pages/Auth/Login';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Signup from './pages/Auth/Signup';
+import ForgotPassword from './pages/Auth/ForgotPassword';
 
 const router = createBrowserRouter([
 	{
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
 	{
 		path: '/signup',
 		element: <Signup />
+	},
+	{
+		path: '/forgot-password',
+		element: <ForgotPassword />
 	},
 	{
 		path: '/write',

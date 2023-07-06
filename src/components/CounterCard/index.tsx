@@ -19,5 +19,6 @@ export default function Counter({ label, total }: ICounter) {
 			<h6 className="text-[40px] text-[#F15A29] font-black">{count}</h6>
 			<p className="text-[20px]">{label}</p>
 		</div>
+		// <div className="h-[100px] bg-[#F15A29] min-w-[100px] flex-grow">a</div>
 	);
 }
